@@ -1,0 +1,48 @@
+/* Utilizando el selector universal (apunt a a todos)
+ para realizar el set de CSS*/
+ * {
+    /* se eliminan todos los margin por defecto */
+    margin: 0;
+    /* se eliminan todos los padding por defecto */
+    padding: 0; 
+    /* se elimina el estilo de las listas */
+    list-style-type: none;
+    /* el padding y border se consideran para calcular
+     el tamaño de la caja */
+    box-sizing: border-box;
+    /* se elimina el subrayado de los links <a> */
+    text-decoration: none
+  }
+
+
+nav {
+    background-color: black;
+}
+
+body header nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main {
+    background-color: aquamarine;
+    height:100vh;
+    width: 100vw;
+
+}
+
+.container {
+    display: grid;
+    grid-template: repeat(8, minmax(10px, 100px)) / repeat(
+        auto-fit,
+        minmax(100px, 1fr)
+      );
+    gap: 10px;
+    padding: 10px;
+}
+.children {
+    background-color: antiquewhite;
+    border-radius: 20px;
+    
+}

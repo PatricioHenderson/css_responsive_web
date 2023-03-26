@@ -22,7 +22,15 @@ body {
  que se ve en la imagen*/
 
 /* ------------------------------------ */
-
+.grilla {
+  display: grid;
+  grid-template: repeat(2 , minmax(10px, 1fr)) /
+  repeat(2, minmax(10px, 1fr));
+    grid-template-areas: 
+    "b c"
+    "w e";
+    gap: 10px;
+}
 /* Color de fondo según tipo */
 .normal {
   background: radial-gradient(
@@ -32,6 +40,7 @@ body {
   );
 }
 .agua {
+  grid-area: w;
   background: radial-gradient(
     circle,
     rgba(255, 255, 255, 1) 0%,
@@ -39,6 +48,7 @@ body {
   );
 }
 .fuego {
+  grid-area: c;
   background: radial-gradient(
     circle,
     rgba(255, 255, 255, 1) 0%,
@@ -46,6 +56,7 @@ body {
   );
 }
 .electricidad {
+  grid-area: e;
   background: radial-gradient(
     circle,
     rgba(255, 255, 255, 1) 0%,
@@ -53,6 +64,7 @@ body {
   );
 }
 .planta {
+  grid-area: b;
   background: radial-gradient(
     circle,
     rgba(255, 255, 255, 1) 0%,
@@ -65,4 +77,16 @@ body {
     rgba(255, 255, 255, 1) 0%,
     rgb(104, 40, 90) 100%
   );
+}
+
+@media screen and (max-width: 400px) {
+  .grilla {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, minmax(10px, 1fr));
+    grid-template-areas:
+      "b"
+      "c"
+      "w"
+      "e";
+  }
 }
